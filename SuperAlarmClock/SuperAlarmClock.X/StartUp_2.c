@@ -60,8 +60,8 @@ void StartUp (void)
 #warning DEBUG_UART_ENABLED
 
     PPSUnLock;
-    PPSOutput(OUT_FN_PPS_U1TX , OUT_PIN_PPS_RP7);
-    PPSInput( IN_FN_PPS_U1RX , IN_PIN_PPS_RP6);
+    //PPSOutput(OUT_FN_PPS_U1TX , OUT_PIN_PPS_RP7);
+    //PPSInput( IN_FN_PPS_U1RX , IN_PIN_PPS_RP6);
     PPSLock;
 
     OpenUART1(UART_EN &         //config1
