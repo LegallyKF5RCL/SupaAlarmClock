@@ -1,0 +1,117 @@
+SudoCode for CapTouch on SupaAlarmClock
+
+Created:	7/17/2013
+Brian McRee
+
+~~~Nomenclature~~~
+
+-Touchpads
+	-Pad1: scroll value of	-4	//cooresponds to Line1
+	-Pad2: scroll value of 	-2	//Line2
+	-Pad3: scroll value of 	0	//Line3
+	-Pad4: scroll value of 	2	//Line4
+	-Pad5: scroll value of 	4	//Line5
+
+-"Base 2" means 2^x, where x is the ScrollRate
+
+
+
+~~~ISR~~~
+
+*globals
+	-NetRate
+	-Enumerated types for "increment" and "decrement"
+
+*when any Pad is pressed
+
+	-Set TotalScroll value and the line count to 0
+	-Go through all captouch lines
+		-is the Line high?
+			-yes
+				-add the scroll value to the total
+				-increment line count			//this will keep track of how many pads are pressed
+			-no
+				-go to next Line
+	
+	-is the value of TotalScroll negative?
+		-yes
+			-set scroll mode to "decrement"
+			-multiply TotalScroll by negative 1, 		//to match the lookuptable later for Final scroll rate
+		-no
+			-set scroll mode to "increment"
+	-is the line count greater than 1?
+		-yes
+			-divide TotalScroll by 2
+	-enter a lookup table that will determine the NetRate of the system as follows
+		-NetRate is a base 2 exponential with the exception of input 0, which outputs 0 as well
+
+	~	~TotalScroll~	~NetRate~
+	~
+	~	0		0
+	~	1		2
+	~	2		4
+	~	3		8
+	~	4		16
+
+	-Turn on timer
+-leave
+
+
+
+
+*when timerScroll procs
+
+*static counter = 0
+	
+	-increment the counter by 1
+	-is the counter greater than 256?
+		-yes
+			-set counter = 1
+
+	-is the counter % NetRate == 0?
+		-yes
+			-is the scroll mode set to "decrement"?
+				-yes
+					-decrease output by 1
+				-no
+					-increase output by 1
+			-printf
+		-no
+-leave
+
+~
+~
+~
+
+-timerScroll setup
+	-set the timer proc at a frequency of 16 hz
+		-period is .0625 seconds 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

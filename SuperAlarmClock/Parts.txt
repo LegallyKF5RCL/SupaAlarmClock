@@ -1,0 +1,13 @@
+EEPROM
+	http://www.mouser.com/ProductDetail/Atmel/AT93C46E-PU/?qs=sGAEpiMZZMuVhdAcoizlRQCaxkOsAon3u61%2f%252bbsFuN0%3d	
+
+LCD Screen
+	3.3V
+		https://www.sparkfun.com/products/9068
+
+thermal sensor
+	https://www.sparkfun.com/products/10988
+
+cap touch periph
+	Mouser part#: 957-IQS158MSR
+

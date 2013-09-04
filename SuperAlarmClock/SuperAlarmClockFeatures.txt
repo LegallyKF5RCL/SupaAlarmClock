@@ -1,0 +1,97 @@
+Super Alarm Clock
+
+
+~~~~~~~~~~~~~~~
+~~~Functions~~~
+~~~~~~~~~~~~~~~
+
+
+~Timing
+	-It must keep accurate time over a period of a year
+		-external watch crystal
+		-RTCC module
+			-It must have a settable alarm through the scroll function
+				-one alarm
+			-It must have a settable time through the scroll function
+
+~Interface
+	-It must have a digital display that is backlit
+		-The display should be dimmed in an idle state, and brighened when interfacing with the clock
+		-UART enabled
+	-It must have a way to scroll up and down
+		-it should use cap touch pads to allow for different scroll rate
+			-5 pads total, 2 for going down, 1 for neutral, 2 for going up 
+	-it must have a snooze button
+		-the snooze button should be large
+		-the snooze button should be cap touch 
+			-1 big
+	-The alarm must activate a speaker that emitts a programmed tone
+
+~Low Power, and backup Power
+	-It must be able to retain settings in the event of power lossd
+		-SPI to EEPROM
+			-1KB EEPROM
+	-It must be low power
+		*how do I low power
+			-Use lowest speed allowed to deal with periphs and modules
+	-It must have a source of back-up power in the event of power loss
+		*lolanalog
+
+~sensors
+	-it must display ambient temperature readings from indoors and outdoors
+		-cheap analog voltage temperature device
+			-1 A2D
+	-photo optic sensor
+		-when the room is lit, undim the display
+		-when the room is dark, dim the display
+
+
+~~~~~~~~~~~~~~~~~~~~
+~~~Modules Needed~~~
+~~~~~~~~~~~~~~~~~~~~
+
+-RTCC
+-PWM
+-UART
+-CapTouch
+-SPI
+-A2D
+
+
+~~~~~~~~~~~~~~
+~~~Hardware~~~
+~~~~~~~~~~~~~~
+
+-external watch crystal
+-Digital output screen
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
