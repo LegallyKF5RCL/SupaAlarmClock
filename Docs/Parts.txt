@@ -11,3 +11,8 @@ thermal sensor
 cap touch periph
 	Mouser part#: 957-IQS158MSR
 
+buzzer
+	https://www.sparkfun.com/products/7950
+
+light sensor
+	http://www.mouser.com/ProductDetail/Avago-Technologies/APDS-9930/?qs=sGAEpiMZZMsMHNolIrhXrIwzbbJ%252bPzWGC0XwnL9ELvo%3d
